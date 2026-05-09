@@ -1,9 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wheelie Cool</title>
 
 <style>
-    body {
+
+body {
     margin: 0;
-    font-family: "Futura", Arial, sans-serif;
+    font-family: Futura, Arial, sans-serif;
     background: #dadada;
     color: #333;
 }
@@ -15,7 +23,7 @@
 }
 
 .header {
-    background: #fff;
+    background: white;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,181 +63,92 @@ h2 {
 }
 
 .card {
-    background: #fff;
+    background: white;
     padding: 20px;
     border-radius: 10px;
     margin: 30px 0;
 }
 
-.profile {
-    display: flex;
-    gap: 20px;
-}
-
-.profile img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+/* 3D VIEWER */
+#bike-viewer {
+    width: 100%;
+    height: 500px;
     border-radius: 10px;
-}
-
-.role {
-    color: #cc0033;
-    font-weight: bold;
-}
-
-.worldmap {
-    width: 900px;
-    height: 600px;
-    background: url("https://i.ibb.co/LGPLnD0/7-SCA-student-centers-map.jpg") no-repeat;
-    background-size: cover;
-    margin: 20px auto;
-    position: relative;
-    border-radius: 10px;
-}
-
-.worldmap-item {
-    position: absolute;
-    color: #cc0033;
-    font-size: 22px;
-}
-
-.worldmap-item span {
-    display: none;
-    background: white;
-    padding: 4px;
-    border-radius: 5px;
-    font-size: 12px;
-}
-
-.worldmap-item:hover span {
-    display: inline;
+    overflow: hidden;
+    background: #111;
 }
 
 .footer {
     text-align: center;
     padding: 20px;
-    background: #fff;
+    background: white;
     margin-top: 40px;
 }
-</style>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Wheelie Cool</title>
-<link rel="stylesheet" href="styles.css">
+canvas {
+    display: block;
+}
+
+</style>
 </head>
 
 <body>
 
 <header class="header">
-    <nav class="navbar">
 
-   
-        <a href="https://kab521.github.io/class-project-bike/"><img src="https://i.ibb.co/mC07Nhfx/Add-a-hading.png" height="120"></a>
+<nav class="navbar">
 
+<a href="#">
+<img src="https://i.ibb.co/mC07Nhfx/Add-a-hading.png" height="120">
+</a>
 
-        <div class="nav-links">
-            <a href="index.html">home</a>
-            <a href="review.html">review</a>
-            <a href="map.html">map</a>
-            <a href="about.html">about</a>
-        </div>
+<div class="nav-links">
+<a href="#">home</a>
+<a href="#">review</a>
+<a href="#">map</a>
+<a href="#">about</a>
+</div>
 
-    </nav>
+</nav>
 </header>
 
 <div class="container">
 
 <div class="card">
-<h1>"We Make Motorcycle Riding Wheelie Easy!"</h1>
-    <p>
-Welcome to Wheelie Cool! This website is for beginners who are curious about motorcycles but may feel nervous or overwhelmed by the community. As someone learning myself, I wanted to create a space that’s not intense, but easy to understand. Wheelie Cool is a place where users can learn alongside me through simple explanations, personal experiences, and beginner-friendly resources. Here, you can explore the differences between bikes, read reviews, view safe riding zones around Rutgers University, and discover real data and narratives about the riding experience. The goal of this site is not to act like an expert guide, but to make motorcycles feel less intimidating and more approachable for anyone interested in learning at their own pace.
-</p>
-</div>
-<br>
-<div class="card">
+
+<h1>We Make Motorcycle Riding Wheelie Easy!</h1>
+
 <p>
-The purpose of grouping these items for my site is because when I researched bikes I didn't know there were two different types of sports bikes: Super bike (track-focused) and Sport-Touring (comfort-focused). So maybe you like the look of the bike but just want to use it to commute and have a comfortable ride, then you would value a sport-touring bike. Whereas if you want the fast-paced really cool racing element, then you would like a super bike. I grouped these two so you can see key differences and features. They offer different elements based on what you're looking for. I think my user would find it interesting to know that so they don't get the wrong sportsbike and notice that it might be too intense for them, or they're looking for more power and speed. The main features to look out for would be the riding position, as superbikes have you hunched-over, while sport-tourers have higher handlebars and lower footpegs to keep you upright. Also, superbikes prioritize handling, high-revving power, and top-tier braking, often at the expense of comfort. While sport-touring bikes prioritize long-range comfort, wind protection, and stability, with lower-rpm power delivery. Superbikes also are very minimalist and extremely lightweight for speed while sport-tourers are heavier, have larger fuel tanks, and better wind protection.
+Welcome to Wheelie Cool! This website is for beginners who are curious about motorcycles but may feel nervous or overwhelmed by the community.
 </p>
+
 </div>
+
+<div class="card">
+
+<h2>Interactive Motorcycle Viewer</h2>
+
+<div id="bike-viewer"></div>
+
+</div>
+
+<div class="card">
 
 <h2>Supersport / Superbike</h2>
 
-<div class="card">
-<img src="https://i.ibb.co/cc39Dzr7/Artboard-1.png" width="100%">
-
 <p>
-Superbikes are more of a performance-oriented motorcycle that is designed for speed, agility, and track-inspired handling. Usually its key features include: high-horsepower, high-revving engines, aerodynamic bodywork, lightweight materials, and aggressive, forward-leaning riding positions for maximum control. They emphasize fast acceleration, superior braking, and precise cornering over comfort.
+Superbikes are performance-oriented motorcycles designed for speed and agility.
 </p>
 
-<ul>
-<li><strong>Ducati Panigale V4 S/R (2026)</strong></li>
-<li><strong>BMW M1000RR / S1000RR</strong></li>
-<li><strong>Honda CBR1000RR-R Fireblade SP</strong></li>
-<li><strong>Kawasaki Ninja ZX-10RR / ZX-10R</strong></li>
-<li><strong>Aprilia RSV4 Factory 1100 (2025)</strong></li>
-<li><strong>Suzuki GSX-R750 / GSX-8R</strong></li>
-</ul>
-</div>
-
-<h2>Sport Touring (comfort-focused)</h2>
-
-<div class="card">
-<img src="https://i.ibb.co/DHhLDRJr/Artboard-2.png" width="100%">
-
-<p>
-Sport touring bikes, on the other hand, prioritize blending high-performance sportbike engines with long-distance comfort. They feature upright ergonomics, integrated luggage, wind protection, and advanced electronics. They are designed for long rides while still maintaining speed and agility.
-</p>
-
-<ul>
-<li><strong>BMW R 1250 RT / R 1300 RT</strong></li>
-<li><strong>Yamaha FJR1300</strong></li>
-<li><strong>KTM 1290 Super Duke GT</strong></li>
-<li><strong>Kawasaki Concours 14</strong></li>
-<li><strong>Ducati Multistrada V4</strong></li>
-<li><strong>MV Agusta Turismo Veloce Lusso SCS</strong></li>
-</ul>
-</div>
-
-<div class="card">
-<img src="https://i.ibb.co/zVbzv3Bs/1.png" width="100%">
-<p>
-As you can see, this graph shows how the speed for superbikes is higher, while touring bikes are slightly lower.
-</p>
-</div>
-
-<div class="card">
-<img src="https://i.ibb.co/vxhppkpK/2.png" width="100%">
-<p>
-This graph shows the torque curve of the engine in RPMs. Touring bikes are designed for stronger acceleration at lower speeds, making them more comfortable and easier to ride without frequent gear changes.
-</p>
 </div>
 
 </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3D Motorcycle</title>
+<footer class="footer">
+<p>© Wheelie Cool, 2026</p>
+</footer>
 
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #111;
-    }
-
-    canvas {
-      display: block;
-    }
-  </style>
-</head>
-<body>
-
+<!-- THREE.JS -->
 <script type="module">
 
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.165/build/three.module.js';
@@ -238,73 +157,102 @@ import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.165/examples
 
 import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.165/examples/jsm/loaders/GLTFLoader.js';
 
+const container = document.getElementById('bike-viewer');
 
-// Scene
+// SCENE
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x222222);
 
-// Camera
+// CAMERA
 const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000
+    75,
+    container.clientWidth / container.clientHeight,
+    0.1,
+    1000
 );
 
 camera.position.set(0, 2, 5);
 
-// Renderer
-const renderer = new THREE.WebGLRenderer({ antialias: true });
+// RENDERER
+const renderer = new THREE.WebGLRenderer({
+    antialias: true
+});
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(
+    container.clientWidth,
+    container.clientHeight
+);
 
-document.body.appendChild(renderer.domElement);
+container.appendChild(renderer.domElement);
 
-// Lights
-const light = new THREE.DirectionalLight(0xffffff, 2);
-light.position.set(5, 10, 5);
-scene.add(light);
+// LIGHTS
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
 
-const ambient = new THREE.AmbientLight(0xffffff, 1);
-scene.add(ambient);
+directionalLight.position.set(5, 10, 5);
 
-// Controls (drag to rotate)
-const controls = new OrbitControls(camera, renderer.domElement);
+scene.add(directionalLight);
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+
+scene.add(ambientLight);
+
+// CONTROLS
+const controls = new OrbitControls(
+    camera,
+    renderer.domElement
+);
 
 controls.enableDamping = true;
 
-// Load motorcycle
+// LOAD MOTORCYCLE
 const loader = new GLTFLoader();
 
-loader.load('motorcycle.glb', function(gltf) {
+loader.load(
+    'motorcycle.glb',
 
-  const bike = gltf.scene;
+    function(gltf) {
 
-  bike.scale.set(1, 1, 1);
+        const bike = gltf.scene;
 
-  scene.add(bike);
+        bike.scale.set(1, 1, 1);
 
-});
+        scene.add(bike);
+    },
 
-// Animate
+    undefined,
+
+    function(error) {
+
+        console.error(error);
+
+    }
+);
+
+// ANIMATION
 function animate() {
-  requestAnimationFrame(animate);
 
-  controls.update();
+    requestAnimationFrame(animate);
 
-  renderer.render(scene, camera);
+    controls.update();
+
+    renderer.render(scene, camera);
 }
 
 animate();
 
-// Resize
+// RESIZE
 window.addEventListener('resize', () => {
 
-  camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect =
+        container.clientWidth /
+        container.clientHeight;
 
-  camera.updateProjectionMatrix();
+    camera.updateProjectionMatrix();
 
-  renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(
+        container.clientWidth,
+        container.clientHeight
+    );
 
 });
 
@@ -312,12 +260,3 @@ window.addEventListener('resize', () => {
 
 </body>
 </html>
-
-
-<footer class="footer">
-<p>© Wheelie Cool, 2026</p>
-</footer>
-
-</body>
-</html>
-
